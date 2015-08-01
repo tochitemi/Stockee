@@ -1,0 +1,51 @@
+<script type="text/javascript"> 
+var takestocks = new Array();
+var i=0;
+	"{% for stock2 in stock_list %}"
+
+	takestocks[i] = "{{ stock2.ticker }}";
+	i++;
+ "{% endfor %}"
+ if (takestocks.length ==  1){
+ localStorage.myValue1 = takestocks[0];
+}
+else if (takestocks.length ==  2){
+ window.myValue1 = takestocks[0];
+window.myValue2 = takestocks[1];
+}
+else if (takestocks.length ==  3){
+ window.myValue1 = takestocks[0];
+ window.myValue2 = takestocks[1];
+window.myValue3 = takestocks[2];
+}
+ //alert(takestocks[1]);
+   // var a = "{{ portfolio }}";
+</script>
+
+
+
+<br />
+<section class="services grid-wrap">
+		<header class="grid col-full">
+			<hr>
+			<p class="fleft">My Stocks</p>
+				<a href="profile.htm" class="arrow fright">Manage Stocks</a>
+		</header>
+		  {% for stock in stock_list %}
+		<article class="grid col-one-third mq3-col-full">
+			<aside><img src="../static/graydot.jpg" height="15" width="15" alt=""></aside>
+			<h5>{{ stock.name }}</h5>
+		    <p style="text-align:justify;"> Stock Symbol: {{ stock.ticker }} <br>
+		     Number of Shares: {{stock.shares}} <br>
+       Unit Price: $ {{ stock.price }}</p> 
+        
+		</article>
+		 {% endfor %}
+	</section>
+
+<br>
+<br>
+
+
+
+<!-- <h2>Stock list</h2> -->

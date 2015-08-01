@@ -1,0 +1,322 @@
+{% extends "_base.htm" %}
+{% block bodycontent %}
+<script type="text/javascript">
+function submitForm(){
+  $.post('/stock', $('#myForm').serialize(), function(response, status) {$('#msgarea').append(response+"<br />");
+  });
+  return false;
+};
+
+function submitForm3(){
+  $.post('/minimum', $('#myForm3').serialize(), function(response, status) {$('#msgarea2').append(response+"<br />");
+  });
+  return false;
+};
+
+function submitForm2(){
+  $.post('/delete', $('#myForm2').serialize(), function(response, status) {$('#msgarea').append(response+"<br />");
+  });
+  return false;
+};
+</script>
+<hr id="hr2"><br><br>
+<div>
+<div style="position:relative; float:left; margin-left:20px; width: 450px">
+     <h3>Add Stock</h3>
+     
+      <form id="myForm" onsubmit="return submitForm()">
+     Ticker:  &nbsp;<select style="width:300px; font-family: Garamond, Georgia, serif;" name="ticker" form="myForm">
+  <option value="amzn">Amazon.com Inc.</option>
+
+  <option value="aapl">Apple Inc.</option>
+
+  <option value="aol">AOL Inc.</option>
+
+  <option value="t">AT&T, Inc.</option>
+
+  <option value="bac">Bank of America Corporation</option>
+
+  <option value="b">Barnes Group Inc.</option>
+
+  <option value="c">Citigroup, Inc.</option>
+
+  <option value="csco">Cisco Systems, Inc.</option>
+
+  <option value="ko">The Coca-Cola Company</option>
+
+  <option value="dell">Dell Inc.</option>
+
+  <option value="ebay">eBay Inc.</option>
+
+  <option value="xom">Exxon Mobil Corporation</option>
+
+  <option value="fb">Facebook, Inc.</option>
+
+  <option value="f">Ford Motor Co.</option>
+
+  <option value="g">Genpact Ltd.</option>
+
+  <option value="goog">Google</option>
+
+  <option value="hpq">Hewlett-Packard Company</option>
+
+  <option value="h">Hyatt Hotels Corporation</option>
+
+  <option value="isrg">Intuitive Surgical, Inc.</option>
+
+  <option value="jcp">J. C. Penney Company, Inc.</option>
+
+  <option value="jnpr">Juniper Networks, Inc.</option>
+
+  <option value="k">Kellogg Company</option>
+
+  <option value="kog">Kodiak Oil & Gas Corp.</option>
+
+  <option value="lvs">Las Vegas Sands Corp.</option>
+  
+  <option value="lnkd">LinkedIn Corporation</option>
+
+  <option value="lux">Luxottica Group SpA</option>
+
+  <option value="m">Macy's, Inc.</option>
+
+  <option value="mcd">McDonald's Corp.</option>
+
+  <option value="msft">Microsoft Corporation</option>
+
+  <option value="nflx">Netflix, Inc.</option>
+  
+  <option value="nke">Nike Inc.</option>
+
+  <option value="nok">Nokia Corporation</option>
+
+  <option value="orcl">Oracle Corporation</option>
+
+  <option value="ostk">Overstock.com Inc.</option>
+
+  <option value="p">Pandora Media, Inc. </option>
+
+  <option value="pep">Pepsico, Inc.</option>
+
+  <option value="qihu">Qihoo 360 Technology Co. Ltd</option>
+
+    <option value="qlgc">QLogic Corp.</option>
+  
+  <option value="rad">Rite Aid Corporation</option>
+
+  <option value="rvbd">Riverbed Technology, Inc.</option>
+
+  <option value="sa">Seabridge Gold, Inc.</option>
+  
+  <option value="siri">SIRIUS XM Radio Inc.</option>
+
+  <option value="s">Sprint Nextel Corp.</option>
+
+  <option value="tgt">Target Corp.</option>
+
+  <option value="txn">Texas Instruments Inc.</option>
+
+  <option value="ua">Under Armour, Inc.</option>
+  
+  <option value="uam">Universal American Corp</option>
+  
+  <option value="vz">Verizon Communications Inc.</option>
+  
+  <option value="v">Visa Inc.</option>
+  
+  <option value="wmt">Wal-Mart Stores Inc.</option>
+  
+  <option value="dis">The Walt Disney Company</option>
+  
+  <option value="xrx">Xerox Corporation</option>
+  
+  <option value="xoom">Xoom Corporation</option>
+
+  <option value="yhoo">Yahoo</option>
+  
+  <option value="yelp">Yelp, Inc. </option>
+  
+  <option value="zfc">ZAIS Financial Corp.</option>
+  
+  <option value="zep">Zep, Inc.</option>
+</select>
+<br><br>
+      <!-- Ticker: <input type="text" name="ticker"/> <br> -->
+      Shares: <input style="width:300px; font-family: Garamond, Georgia, serif;" type="text" name="shares"/> <br/><br/>
+      <input style="width:300px; font-family: Garamond, Georgia, serif;" type="submit" value="Post/Update New Stock"/> 
+      </form>
+
+<br>
+<br>
+<br>
+<h3>Delete Stock</h3>
+      <form id="myForm2" onsubmit="return submitForm2()">
+     Ticker:  &nbsp;<select style="width:300px; font-family: Garamond, Georgia, serif;" name="ticker" form="myForm2">
+  <option value="amzn">Amazon.com Inc.</option>
+
+  <option value="aapl">Apple Inc.</option>
+
+  <option value="aol">AOL Inc.</option>
+
+  <option value="t">AT&T, Inc.</option>
+
+  <option value="bac">Bank of America Corporation</option>
+
+  <option value="b">Barnes Group Inc.</option>
+
+  <option value="c">Citigroup, Inc.</option>
+
+  <option value="csco">Cisco Systems, Inc.</option>
+
+  <option value="ko\">The Coca-Cola Company</option>
+
+  <option value="dell">Dell Inc.</option>
+
+  <option value="ebay">eBay Inc.</option>
+
+  <option value="xom">Exxon Mobil Corporation</option>
+
+  <option value="fb">Facebook, Inc.</option>
+
+  <option value="f">Ford Motor Co.</option>
+
+  <option value="g">Genpact Ltd.</option>
+
+  <option value="goog">Google</option>
+
+  <option value="hpq">Hewlett-Packard Company</option>
+
+  <option value="h">Hyatt Hotels Corporation</option>
+
+  <option value="isrg">Intuitive Surgical, Inc.</option>
+
+  <option value="jcp">J. C. Penney Company, Inc.</option>
+
+  <option value="jnpr">Juniper Networks, Inc.</option>
+
+  <option value="k">Kellogg Company</option>
+
+  <option value="kog">Kodiak Oil & Gas Corp.</option>
+
+  <option value="lvs">Las Vegas Sands Corp.</option>
+  
+  <option value="lnkd">LinkedIn Corporation</option>
+
+  <option value="lux">Luxottica Group SpA</option>
+
+  <option value="m">Macy's, Inc.</option>
+
+  <option value="mcd">McDonald's Corp.</option>
+
+  <option value="msft">Microsoft Corporation</option>
+
+  <option value="nflx">Netflix, Inc.</option>
+  
+  <option value="nke">Nike Inc.</option>
+
+  <option value="nok">Nokia Corporation</option>
+
+  <option value="orcl">Oracle Corporation</option>
+
+  <option value="ostk">Overstock.com Inc.</option>
+
+  <option value="p">Pandora Media, Inc. </option>
+
+  <option value="pep">Pepsico, Inc.</option>
+
+  <option value="qihu">Qihoo 360 Technology Co. Ltd</option>
+
+    <option value="qlgc">QLogic Corp.</option>
+  
+  <option value="rad">Rite Aid Corporation</option>
+
+  <option value="rvbd">Riverbed Technology, Inc.</option>
+
+  <option value="sa">Seabridge Gold, Inc.</option>
+  
+  <option value="siri">SIRIUS XM Radio Inc.</option>
+
+  <option value="s">Sprint Nextel Corp.</option>
+
+  <option value="tgt">Target Corp.</option>
+
+  <option value="txn">Texas Instruments Inc.</option>
+
+  <option value="ua">Under Armour, Inc.</option>
+  
+  <option value="uam">Universal American Corp</option>
+  
+  <option value="vz">Verizon Communications Inc.</option>
+  
+  <option value="v">Visa Inc.</option>
+  
+  <option value="wmt">Wal-Mart Stores Inc.</option>
+  
+  <option value="dis">The Walt Disney Company</option>
+  
+  <option value="xrx">Xerox Corporation</option>
+  
+  <option value="xoom">Xoom Corporation</option>
+
+  <option value="yhoo">Yahoo</option>
+  
+  <option value="yelp">Yelp, Inc. </option>
+  
+  <option value="zfc">ZAIS Financial Corp.</option>
+  
+  <option value="zep">Zep, Inc.</option>
+
+</select><br/><br/>
+<input style="width:300px; font-family: Garamond, Georgia, serif;" type="submit" value= "Delete Stock">
+</form>
+<br>
+<br>
+
+          <div style="color:#900; font-size:20px; font-family: Garamond, Georgia, serif;" id="msgarea">
+</div>
+</div>
+
+<div style=" width:1px; height:800px;background-color: #CCC;float:left; margin-right: 25px; margin-left:10px;"></div>
+
+<div style="position:relative; float:left; margin-left:20px; width: 400px">
+
+<h3>Notification</h3>
+      <form id="myForm3" onsubmit="return submitForm3()">
+              Minimum Total Value: <br> <input style="width:300px; font-family: Garamond, Georgia, serif;" type="text" name="mini"/><br/><br/>
+<input style="width:300px; font-family: Garamond, Georgia, serif;" type="submit" value= "Set Minimum Value">
+</form>
+
+<br>
+<br>
+<div style="color:#900; font-size:20px; font-family: Garamond, Georgia, serif;" id="msgarea2">
+</div>
+
+<br><br>
+<a style="color:#CCC; font-size: 11px;">*If your portfolio goes below the specified minimum value, we will notify you </a>
+</div>
+</div>
+<br><br>
+<br>
+<hr id="hr1">
+<br>
+
+
+<footer class="grid-wrap">
+    <ul class="grid col-one-third social">
+      <li><a href="#"> *Trading Hours are from 9:30am to 4:00pm ET. After this period, the prices of your stocks will not fluctuate and are the closing prices for the day.</a></li>
+
+    </ul>
+  
+    <div class="up grid col-one-third ">
+      <a href="#navtop" title="Go back up">&uarr;</a>
+    </div>
+    <nav class="grid col-one-third ">
+      <ul>
+        <li><a href="stock.htm">Dashboard</a></li>
+      </ul>
+    </nav>
+        
+
+  </footer>
+
+{% endblock %}

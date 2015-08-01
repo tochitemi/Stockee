@@ -1,0 +1,132 @@
+{% extends "_base.htm" %}
+{% block bodycontent %}
+<!-- Start of likeforex.com Code --><div style="width:1100px; margin-top:0px; background-color:#FFFFFF;text-align:center;padding:5px;margin: 0 auto;overflow:hidden;"><a href="http://likeforex.com/widgets"><script type="text/javascript" src="http://likeforex.com/widgets/c/st.php?f=USD&t=1"></script></a></div><!-- End of likeforex.com Code -->
+<hr id="hr2">
+<div>
+<div style="position: relative; width: 450px; float:left; display:inline; margin-right:35px;">
+
+	<h1 style="font-family: Garamond, Georgia, serif;">Real-Time<br>
+			Stock Quotes</h1>
+			<p style="text-align:justify">Delays in last sale prices can result in missed opportunities and lost profits. In the stock market, timing is everything. With Stockee®, you can react to opportunities faster by using your pre-configured dashboard to monitor the market with your pre-defined conditions.
+
+			</p>
+			<p style="text-align:justify">Trade with greater confidence by reducing emotion and increasing your trading discipline. Recently modified stocks and stocks on your portfolio are generated on the Trading View® stock chart on the right.
+			</p>
+        
+<br />
+</div>
+
+<div style="width: 650px; float:left; display:inline; ">
+<script type="text/javascript" src="https://s3.amazonaws.com/tradingview/tv.js"></script>
+
+<script type="text/javascript">
+var takedata;
+var items = Array("goog", "aol", "yhoo", "aapl")
+$(document).ready(function(){
+  //sessionStorage.removeItem("take");
+    $.get("/onestock",function(data){
+      sessionStorage.setItem("take", data);
+    //window.localStorage.takedata = data;    
+    });
+       //alert(takedata1);
+    //takedata = takedata1;
+  }); 
+     //alert(sessionStorage.getItem("take"));
+//var items = Array(takedata);
+//alert(items[0]);
+var item = items[Math.floor(Math.random()*items.length)];
+      new TradingView.widget({
+  "width": 600,
+  "height": 370,
+  "symbol": sessionStorage.getItem("take"),
+  "interval": "1",
+  "toolbar_bg": "#E4E8EB",
+  "allow_symbol_change": true
+});
+</script>
+</div>
+
+<br />
+</div>
+
+<br />
+
+<!-- TradingView Widget BEGIN -->
+
+<!-- TradingView Widget END -->
+
+<!--<hr id="hr1">
+ -->
+
+
+<br />
+      <div id="stocklist" style="clear:left">
+        <br>
+      <img src="/static/spinner.gif">
+      <br>
+      </div>
+<!--FX Empire Forex Tools BEGIN-->          
+<iframe width="1100" height="72" frameborder="0" scrolling="no" allowtransparency="true" src="http://www.tools.fxempire.com/quotes-ticker.php?instruments=1,3,2,5,4,35,88,87,89,92,113&width=1100&text_color=333"></iframe>     
+<!--FX Empire Forex Tools END-->
+
+<hr id="hr2">
+	  <div id="portfolio">
+      <br>
+		<img src="/static/spinner.gif">
+<br>
+<br>
+	  </div>
+
+<script type="text/javascript">
+//auto refresh
+function updateStocklist() { 
+$.ajax({
+  url: "/stocklist",
+  cache: false,
+  success: function(response){
+    $("#stocklist").html(response);
+    setTimeout('updateStocklist()', 0);
+  } 
+ }); 
+}
+//auto refresh
+function updatePortfolio() { 
+$.ajax({
+  url: "/portfolio",
+  cache: false,
+  success: function(response){
+    $("#portfolio").html(response);
+    setTimeout('updatePortfolio()', 0);
+  } 
+ }); 
+}
+//auto refresh
+$(function() {
+    setTimeout('updateStocklist()', 0);
+	setTimeout('updatePortfolio()', 0);
+});
+</script>
+
+<div class="divide-top">
+
+<footer class="grid-wrap">
+    <ul class="grid col-one-third social">
+      <li><a href="#"> *Trading Hours are from 9:30am to 4:00pm ET. After this period, the prices of your stocks will not fluctuate and are the closing prices for the day.</a></li>
+
+    </ul>
+  
+    <div class="up grid col-one-third ">
+      <a href="#navtop" title="Go back up">&uarr;</a>
+    </div>
+    <nav class="grid col-one-third ">
+      <ul>
+        <li><a href="index.htm">Home</a></li>
+      </ul>
+    </nav>
+        
+
+  </footer>
+</div>
+<!-- <input type="hidden" id="myVar" name="variable" value="{{ variable }}">
+ -->
+{% endblock %}

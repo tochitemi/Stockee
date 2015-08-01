@@ -1,0 +1,48 @@
+{% extends "_base.htm" %}
+{% block bodycontent %}
+<!--      <h2>Welcome to Stockee</h2>
+ -->
+
+
+		<script type="text/javascript">
+		$(function() {
+			$('ul.hover_block li').hover(function(){
+				$(this).find('img').animate({top:'182px'},{queue:false,duration:500});
+			}, function(){
+				$(this).find('img').animate({top:'0px'},{queue:false,duration:500});
+			});
+			$('ul.hover_block2 li').hover(function(){
+				$(this).find('img').animate({left:'300px'},{queue:false,duration:500});
+			}, function(){
+				$(this).find('img').animate({left:'0px'},{queue:false,duration:500});
+			});
+		});
+		</script>
+		
+
+
+	<div style="margin-left:200px; margin-top:80px;" align="center">
+	<ul class="hover_block">
+		<li><a href="#"><img src="../static/lady1.png" alt="Team Stockee" />As a professional I can always rely on Stockee to manage my stock portfolio <br><br /> - Kelly Madison, WI</a></li>
+		<li><a href="#"><img src="../static/gwu1.png" alt="Team Stockee" />GWU Students endorse Stockee® for its intuitive interface</a></li>
+	</ul>
+    <hr id="hr3">
+	<ul class="hover_block2">
+
+		<li><a href="#"><img src="../static/history1.jpg" alt="Team Stockee" /> Want to be a part of GW history? Join Team Stockee today!</a></li>
+		<li><a href="#"><img src="../static/graduate1.jpg" alt="Team Stockee" /> With Stockee, I was able to organize my stocks efficiently and pay off my student loans <br><br /> - Dave Christian, CA</a></li>
+	</ul>
+    
+
+ 
+     <hr id="hr3">
+
+	</div>
+
+
+	   <br>
+    <br>
+    <br>
+    <br>
+
+{% endblock %}

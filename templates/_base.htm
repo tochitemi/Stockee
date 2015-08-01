@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link rel="shortcut icon" href="../static/favicon.ico">
+  <!-- <link rel="icon" type="image/png" href="../static/favicon.ico"> -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+<!-- <link rel="icon" type="image/png" href="../static/favicon.png"> -->
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />     
+<link rel="apple-touch-icon" href="../static/iphoneicon.png"/>   
+
+
+
+   <title>
+      {% block title %}Stockee{% endblock %}
+   </title>
+   <link href="../static/style.css" rel="stylesheet"
+         type="text/css" />
+   <script type="text/javascript" 
+           src="../static/js/jquery-1.2.6.min.js">
+   </script>
+   <style media="screen">
+    
+    
+    ul.hover_block { display: block; overflow: hidden; height: 1%; padding-bottom: 15px; }
+      
+    ul.hover_block li, ul.hover_block2 li {
+      list-style:none;
+      float:left;
+      background: #fff;
+      padding: 10px;
+      width:300px; position: relative;
+      margin-right: 20px; }
+
+    ul.hover_block li a, ul.hover_block2 li a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      height: 150px;
+      width: 268px;
+      padding: 16px;
+      color: #000;
+      font-family: "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+    }
+
+    ul.hover_block li a, ul.hover_block2 li a { text-decoration: none; }
+
+    ul.hover_block li img, ul.hover_block2 li img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 0;
+    }
+    input {
+  border: 1px solid #DDD;
+  color: #777;
+  font-size: 1em;
+  padding: 1em;
+  width:60%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url(/js/boxsizing.htc); }
+
+    </style>
+ </head>
+ <body>
+<div class="container">
+ <header id="navtop">
+    <a href="index.htm" class="logo fleft">
+      <img src="../static/logo.png" alt="Stockee">
+    </a>
+    
+  <nav class="fright">
+      <ul>
+      {% ifnotequal username None %}
+        <li><a href="/stock"
+              {% ifequal path '/stock' %}
+                    class="navactive"
+              {% endifequal %}
+            >Dashboard</a></li></ul>
+      {% endifnotequal %}
+	  {% ifnotequal username None %}
+    <ul>
+        <li><a href="/profile"
+              {% ifequal path '/profile' %}
+                    class="navactive"
+              {% endifequal %}
+            >Profile Manager &nbsp;<img src="../static/avatar_150.gif" height="18" width="18" alt=""></a></li>
+      {% endifnotequal %}
+    </ul>
+
+    {% ifnotequal username None %}
+       <ul>
+        <li><a href="/tips.htm"
+              {% ifequal path '/tips.htm' %}
+                    class="navactive"
+              {% endifequal %}
+            >Stock Tips</a></li>
+      {% endifnotequal %}
+    </ul>
+    <ul>
+      {% ifequal username None %}
+        <li><a href="/apply"
+              {% ifequal path '/apply' %}
+                    class="navactive"
+              {% endifequal %}
+            >New User</a></li>
+        <li><a href="/login"
+              {% ifequal path '/login' %}
+                    class="navactive"
+              {% endifequal %}
+            >Login</a></li>
+      {% else %}
+      
+        <li><a href="/logout">Logout ({{username}})</a> </li>
+      {% endifequal %}
+      </ul>
+      </nav>
+   </header>
+   <div id="bodycontent">
+      {% block bodycontent %}
+           To be Replaced
+      {% endblock %}  
+   </div>
+    
+    </div>
+ </body>
+</html>

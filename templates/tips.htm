@@ -1,0 +1,134 @@
+{% extends "_base.htm" %}
+{% block bodycontent %}
+<script src="../static/js/scripts.js"></script>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../static/js/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+	<div class="services-page main grid-wrap">
+
+		<header class="grid col-full">
+			<hr>
+			<p class="fleft">Tips & Tools</p>
+		</header>
+
+
+		<aside class="grid col-one-quarter mq2-col-full">
+        <div id="stocktwits-widget-news"></div>
+<script type="text/javascript" src="http://stocktwits.com/addon/widget/2/widget-loader.min.js"></script>
+<script type="text/javascript">
+STWT.Widget({container: 'stocktwits-widget-news', symbol: 'goog', width: '220', height: '550', limit: '50', scrollbars: 'true', streaming: 'true', title: 'Stock Tweets', style: {link_color: '4871a8', link_hover_color: '4871a8', header_text_color: '000000', border_color: 'cecece', divider_color: 'cecece', divider_color: 'cecece', divider_type: 'solid', box_color: 'f5f5f5', stream_color: 'ffffff', text_color: '000000', time_color: '999999'}});
+</script>
+
+		</aside>
+		
+		<section class="grid col-three-quarters mq2-col-full">
+		
+			
+			
+			<div class="grid-wrap">
+
+		
+			<article id="navtogg" class="grid col-full">
+				<h2 style="font-family: Garamond, Georgia, serif;">Top 10 Stocks of the Week</h2>
+						<ul class="toggle-view">
+							<li>
+								<h5 class="toggle-title">Buy <span class="toggle-title-detail">- updated weekly</span></h5>
+								<div style="color:#093" class="toggle grid-wrap">                     
+									<ul class="grid col-one-half mq3-col-full">
+										<li>Bankatlantic Bancorp (BBK)</li>
+										<li>Glaxosmithkline Plc (GSK)</li>
+										<li>Rite Aid Corp. (RAD)</li>
+										<li>Valuevision Media (VVTV)</li>
+										<li>Chipotle Mexican Grill (CMG)</li> 
+								
+									</ul>
+									<ul class="grid col-one-half mq3-col-full">
+										<li>Verizon Communications Inc. (VZ)</li>
+										<li>Johnson & Johnson (JNJ)</li>
+										<li>Tesla Motors (TSLA)</li>
+										<li>Hershey Foods Corp. (HSY)</li>
+										<li>Seattle Genetics (SGEN)</li> 
+										
+									</ul>
+								</div>       
+							</li>
+							
+							<li>
+								<h5 class="toggle-title">Sell <span class="toggle-title-detail">- updated weekly</span></h5>
+							<div style="color:#900" class="toggle grid-wrap">                     
+									<ul class="grid col-one-half mq3-col-full">
+										<li>Vanguard Natural Resources (VNR)</li>
+										<li>El Paso Electric Company (EE)</li>
+										<li>Union Pacific Corp. (UNP)</li>
+										<li>Alliance Data Systems Corp (ADS)</li>
+										<li>Taylor Capital Group (TAYC)</li> 
+								
+									</ul>
+									<ul class="grid col-one-half mq3-col-full">
+										<li>Magnum Hunter Resources (MHR)</li>
+										<li>Ev Energy Partners L.P. (EVEP)</li>
+										<li>Zagg Inc. (ZAGG)</li>
+										<li>Netgear (NTGR)</li>
+										<li>Keynote Systems (KEYN)</li> 				
+									</ul>
+								</div>     
+							</li>
+						</ul>
+			</article>
+			
+			<article id="navtabs" class="grid col-full">
+				<h2 style="font-family: Garamond, Georgia, serif;">Tips for Investors</h2>
+				<div class="">
+					<ul class="tabs clearfix">
+					    <li><a href="#tab1">First</a></li>
+					    <li><a href="#tab2">Second</a></li>
+					    <li><a href="#tab3">Third</a></li>
+					</ul>
+					<div class="tab_container">
+					    <article id="tab1" class="tab_content">
+                        <h6>Keep It Simple.</h6>
+					        <p style="font-family: Garamond, Georgia, serif;">Those who trade too often, focus on irrelevant data points, or try to predict the unpredictable are likely to encounter some unpleasant surprises when investing. By keeping it simple - focusing on companies with economic moats, requiring a margin of safety when buying, and investing with a long-term horizon - you can greatly enhance your odds of success.</p>
+					    </article>
+					    
+						<article id="tab2" class="tab_content">
+							<h6>Have the Proper Expectations.</h6>
+					        <p style="font-family: Garamond, Georgia, serif;">Are you getting into stocks with the expectation that quick riches soon await? Hate to be a wet blanket, but unless you are extremely lucky, you will not double your money in the next year investing in stocks. Such returns generally cannot be achieved unless you take on a great deal of risk by, for instance, buying extensively on margin or taking a flier on a chancy security. At this point, you have crossed the line from investing into speculating.</p>
+					    </article>
+					    
+					    <article id="tab3" class="tab_content">
+				    		<h6>Buy Low, Sell High.</h6>
+				            <p style="font-family: Garamond, Georgia, serif;">If you let stock prices alone guide your buy and sell decisions, you are letting the tail wag the dog. It's frightening how many people will buy stocks just because they've recently risen, and those same people will sell when stocks have recently performed poorly. Wakeup call: When stocks have fallen, they are low, and that is generally the time to buy! </p>
+					    </article>
+					 </div>
+				  </div>
+			</article>
+			
+			</div> <!-- 100%articles-->
+		
+		</section>	
+		
+		
+		
+	</div> <!--main-->
+<div class="divide-top">
+
+<footer class="grid-wrap">
+    <ul class="grid col-one-third social">
+      <li><a href="#"> *Trading Hours are from 9:30am to 4:00pm ET. After this period, the prices of your stocks will not fluctuate and are the closing prices for the day.</a></li>
+
+    </ul>
+  
+    <div class="up grid col-one-third ">
+      <a href="#navtop" title="Go back up">&uarr;</a>
+    </div>
+    <nav class="grid col-one-third ">
+      <ul>
+        <li><a href="stock.htm">Dashboard</a></li>
+      </ul>
+    </nav>
+        
+
+  </footer>
+</div>
+{% endblock %}

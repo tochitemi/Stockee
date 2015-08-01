@@ -1,0 +1,72 @@
+{% extends "_base.htm" %}
+
+{% block bodycontent %}
+<!--    <h1>New Account Request</h1>
+      <p>
+      Please enter your information below:
+      </p>
+      <form method="post" action="/apply">
+      Name: <input type="text" name="name"/> <br/>
+      Account: <input type="text" name="account"/> <br>
+      Password: <input type="password" name="password"/> <br>
+      Email: <input type="text" name="email"/> 
+      <br/><br/>
+      <input style="font-family: Garamond, Georgia, serif;" type="submit" value="Create"/> 
+      <input style="font-family: Garamond, Georgia, serif;" type="submit" value="Cancel" 
+          onclick="window.location='/'; return false;"/> 
+           -->
+
+	<div class="contact-page main grid-wrap">
+
+		<header class="grid col-full">
+			<hr>
+			<p class="fleft">Apply</p>
+		</header>
+
+		
+		
+		<aside class="grid col-one-quarter mq2-col-one-third mq3-col-full">
+     
+        <img style="margin-left:-20px;" src="../static/portrait.png" height="256" width="256" alt="stockee_portrait">
+
+		</aside>
+		
+		<section class="grid col-three-quarters mq2-col-two-thirds mq3-col-full">
+			<h2>Request a New Stockee Account</h2>
+            
+            {% ifnotequal error None %}
+			<p class="warning">{{ error }}</p>
+			 {% endifnotequal %}
+             
+			<form method="post" action="/apply">	
+				<ul>
+					<li>
+						<label for="name">Your name:</label>
+						<input type="text" name="name">
+					</li>
+                    <li>
+						<label for="name">Account:</label>
+						<input type="text" name="account">
+					</li>
+                     <li>
+						<label for="name">Password:</label>
+						<input type="password" name="password">
+					</li>
+					<li>
+						<label for="email">Email:</label>
+						<input type="text" name="email" required placeholder="youremail@gmail.com" class="required email">
+					</li>	
+	
+					<li>
+	      <input style="font-family: Garamond, Georgia, serif;" type="submit" value="Create"/> 
+      <input style="font-family: Garamond, Georgia, serif;" type="submit" value="Cancel" 
+          onclick="window.location='/'; return false;"/> 
+
+					</li>	
+				</ul>			
+			</form>
+		</section>	
+		
+	</div> <!--main-->
+      
+{% endblock %}

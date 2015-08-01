@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="shortcut icon" href="../static/favicon.ico">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="../static/style.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Welcome to Stockee®</title>
+
+<script>
+function fadeIn(obj) {
+    $(obj).fadeIn(2000);
+}
+
+</script>
+</head>
+
+<body>
+<div class="container">
+	<a href="index.htm">
+<center><img id="preload" onload="fadeIn(this)" style=" margin-top:20px; display:none" src="../static/stockee_logo.png" width="283" height="95" alt="logo" /></center> 
+</a>
+<form class="form-1" method="post" action="/login">
+<p class="field">
+        <input type="text" name="account" placeholder="Username or email">
+    </p>
+        <p class="field">
+        <input type="password" name="password" placeholder="Password">
+    </p>        
+    <br />
+<input style="margin-right:8px; margin-left:30px; font-family: Garamond, Georgia, serif;" class="button" type="submit" name="login" value="Login">
+      
+      <input style="font-family: Garamond, Georgia, serif;" class="button" type="submit" value="New User" 
+          onclick="window.location='/apply'; return false;"/>
+</form>
+      {% ifnotequal error None %}
+       <center><p style="color:#900">
+       {{ error }}
+       </p>
+      {% endifnotequal %}</center>
+  </div>
+</body>
+</html>
